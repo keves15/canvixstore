@@ -140,6 +140,7 @@ const products = [
 // DOM + VARS
 // ===============================
 const cardsGrid = document.getElementById('cardsGrid');
+const searchInput = document.getElementById('searchInput');
 let visibleCount = 6;
 let currentList = [...products];
 
@@ -177,12 +178,39 @@ function createCard(product) {
 }
 
 // ===============================
+// SUGESTÃO "Talvez você quis dizer"
+// ===============================
+function getSuggestion(query) {
+  if (!query) return '';
+  query = query.toLowerCase();
+  let closest = '';
+  let maxScore = 0;
+
+  products.forEach(p => {
+    const name = p.name.toLowerCase();
+    let score = 0;
+    query.split(' ').forEach(word => { if (name.includes(word)) score++; });
+    if (score > maxScore) {
+      maxScore = score;
+      closest = p.name;
+    }
+  });
+
+  return maxScore > 0 ? closest : '';
+}
+
+// ===============================
 // RENDER
 // ===============================
 function renderCards() {
   cardsGrid.innerHTML = '';
-  for (let i = 0; i < visibleCount && i < currentList.length; i++) {
-    cardsGrid.appendChild(createCard(currentList[i]));
+  if (currentList.length === 0) {
+    const suggestion = getSuggestion(searchInput.value);
+    cardsGrid.innerHTML = `<p class="no-results">Nenhum produto encontrado.${suggestion ? ` Talvez você quis dizer: <strong>${suggestion}</strong>` : ''}</p>`;
+  } else {
+    for (let i = 0; i < visibleCount && i < currentList.length; i++) {
+      cardsGrid.appendChild(createCard(currentList[i]));
+    }
   }
   document.getElementById('btnSeeMore').style.display = visibleCount >= currentList.length ? 'none' : 'inline-flex';
 }
@@ -191,8 +219,8 @@ function renderCards() {
 // BUSCA
 // ===============================
 function searchProducts() {
-  const q = document.getElementById('searchInput').value.toLowerCase().trim();
-  if (q === '') {
+  const q = searchInput.value.toLowerCase().trim();
+  if (!q) {
     currentList = [...products];
     visibleCount = 6;
     renderCards();
@@ -203,11 +231,14 @@ function searchProducts() {
   renderCards();
 }
 
-document.getElementById('searchInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') searchProducts(); });
+// ===============================
+// EVENTOS
+// ===============================
+searchInput.addEventListener('keypress', e => { if (e.key === 'Enter') searchProducts(); });
 document.getElementById('btnSearch').addEventListener('click', searchProducts);
-
-// VER MAIS
 document.getElementById('btnSeeMore').addEventListener('click', () => { visibleCount += 4; renderCards(); });
 
+// ===============================
 // INICIAL
+// ===============================
 renderCards();

@@ -5,9 +5,12 @@ body{background:#000;color:#fff;padding-top:84px}
 /* LAYOUT */
 .container{max-width:1200px;margin:0 auto;padding:28px}
 .site-header{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:14px 26px;background:#000;border-bottom:4px solid rgba(0,30,128,0.65);box-shadow:0 6px 30px rgba(0,0,0,0.6)}
-.logo{font-weight:800;font-size:22px;letter-spacing:1.6px;text-decoration:none}
-.logo span{color:#fff;text-shadow:0 0 10px #0026b3} /* CANVIX branco */
-.logo:hover span{color:#00f; text-shadow:0 0 20px #0026b3} /* neon efeito hover */
+
+/* LOGO */
+.logo{font-weight:800;font-size:22px;letter-spacing:1.6px;text-decoration:none;display:inline-block}
+.logo-canvix{color:#fff}
+.logo-store{color:#0026b3;text-shadow:0 0 10px #0026b3}
+.logo:link,.logo:visited,.logo:hover,.logo:active{text-decoration:none}
 
 /* SEARCH */
 .search-bar{display:flex;gap:10px}
@@ -45,7 +48,6 @@ body{background:#000;color:#fff;padding-top:84px}
   transition: transform 0.3s ease;
   box-shadow: 0 0 8px #007bff44, 0 0 16px #007bff33, 0 0 24px #007bff22;
 }
-
 .discount-badge::before {
   content: '';
   position: absolute;
@@ -59,14 +61,12 @@ body{background:#000;color:#fff;padding-top:84px}
   opacity: 0;
   transition: all 0.3s ease;
 }
-
 .discount-badge:hover::before,
 .discount-badge:active::before {
   transform: translate(-50%, -50%) scale(1.4);
   opacity: 1;
   box-shadow: 0 0 24px #007bffaa, 0 0 48px #007bff77, 0 0 72px #007bff44;
 }
-
 .discount-badge:hover,
 .discount-badge:active {
   transform: scale(1.2);
@@ -84,18 +84,14 @@ body{background:#000;color:#fff;padding-top:84px}
 .card.sold-out .btn-buy{background:#444;pointer-events:none;opacity:.7}
 
 /* VER MAIS */
-.btn-see-more{margin-top:28px;padding:10px 26px;border-radius:20px;background:transparent;border:2px solid #fff;color:#fff;font-weight:700;cursor:pointer;display:block;margin-left:auto;margin-right:auto}
+.btn-see-more{margin-top:28px;display:block;margin-left:auto;padding:10px 26px;border-radius:20px;background:transparent;border:2px solid #fff;color:#fff;font-weight:700;cursor:pointer}
 .btn-see-more:hover{background:#fff;color:#000}
 
 /* CARD HOVER GLOW */
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0,30,180,0.25), 0 0 40px #007bff33 inset;
-}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,30,180,0.25),0 0 40px #007bff33 inset}
 
 /* FOOTER */
-.site-footer{background:#0f0f13;border-top:4px solid rgba(0,30,128,0.65);padding:18px 28px;text-align:center}
-.site-footer p{color:#fff;font-size:12px;opacity:.8}
+.site-footer{margin-top:40px;padding:20px;text-align:center;color:#aaa;font-size:12px;background:#0a0a0a;border-top:2px solid #001e80}
 
 /* MOBILE */
 @media(max-width:760px){
