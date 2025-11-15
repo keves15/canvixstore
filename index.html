@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Catálogo Streaming</title>
-  <!-- Linka o CSS externo -->
+  <title>Canvix Store</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Novo header com logo e barra de pesquisa -->
   <header class="site-header">
-    <div class="logo">
-      Canvix <span class="store">Store</span>
-    </div>
+    <a href="#" class="logo"><span>CANVIX</span> STORE</a>
     <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Pesquisar produtos...">
-      <button onclick="performSearch()">Buscar</button>
+      <input id="searchInput" type="text" placeholder="Buscar produto..." />
+      <button id="btnSearch">Buscar</button>
     </div>
   </header>
-  
-  <div class="container">
-    <!-- Título da seção STREAMINGS -->
-    <div class="section-title">STREAMINGS</div>
-    <!-- Grid onde os cartões vão ser inseridos via JS -->
-    <div class="cards-grid" id="cardsGrid"></div>
-    <!-- Botão de Ver Mais -->
-    <button class="btn-see-more" id="btnSeeMore" aria-label="Ver mais produtos">
-      Ver mais
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l7 7-7 7"/></svg>
-    </button>
-  </div>
-  <!-- Linka o arquivo JavaScript externo -->
+
+  <main class="container">
+    <h2 class="section-title">PRODUTOS</h2>
+    <div id="cardsGrid" class="cards-grid"></div>
+    <button id="btnSeeMore" class="btn-see-more">Ver mais</button>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Canvix Store. Todos os direitos reservados.</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
