@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo Streaming</title>
+  <!-- Linka o CSS externo -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Novo header com logo e barra de pesquisa -->
+  <header class="site-header">
+    <div class="logo">
+      Canvix <span class="store">Store</span>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Pesquisar produtos...">
+      <button onclick="performSearch()">Buscar</button>
+    </div>
+  </header>
+  
+  <div class="container">
+    <!-- Título da seção STREAMINGS -->
+    <div class="section-title">STREAMINGS</div>
+    <!-- Grid onde os cartões vão ser inseridos via JS -->
+    <div class="cards-grid" id="cardsGrid"></div>
+    <!-- Botão de Ver Mais -->
+    <button class="btn-see-more" id="btnSeeMore" aria-label="Ver mais produtos">
+      Ver mais
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+  <!-- Linka o arquivo JavaScript externo -->
+  <script src="script.js"></script>
+</body>
+</html>

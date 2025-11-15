@@ -1,0 +1,324 @@
+/* Reset básico para margens e fontes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fundo escuro com leve gradiente */
+body {
+  background: #000000;
+  color: white;
+  padding: 30px;
+}
+
+/* Container centralizado e largura máxima */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Novo: Header do site */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background: #000000;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 68, 255, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Logo no canto esquerdo */
+.logo {
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.logo .store {
+  color: #001e80;
+  text-shadow: 0 0 10px #001e80, 0 0 20px #001e80, 0 0 30px #001e80; /* Efeito neon */
+}
+
+/* Barra de pesquisa no canto direito */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  font-size: 14px;
+  background: #0f0f13;
+  color: white;
+}
+
+.search-bar input::placeholder {
+  color: #bbb;
+}
+
+.search-bar button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background-color: #001e80;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #00ff0d;
+}
+
+/* Ajuste para o body devido ao header fixo */
+body {
+  padding-top: 80px; /* Espaço para o header fixo */
+}
+
+/* ... (resto do código CSS permanece intacto) */
+
+/* Reset básico para margens e fontes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fundo escuro com leve gradiente */
+body {
+  background: #000000;
+  color: white;
+  padding: 30px;
+}
+
+/* Container centralizado e largura máxima */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Título da seção STREAMINGS com barra roxa lateral */
+.section-title {
+  font-weight: 700;
+  font-size: 18px;
+  border-left: 4px solid #001e80;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* Grid responsivo para os cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+/* Card individual */
+.card {
+  background-color: #0f0f13;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 68, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgb(0, 68, 255);
+}
+
+/* Imagem do banner no topo do card */
+.card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Corpo do card com conteúdo */
+.card-content {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Título do produto em caixa alta e negrito */
+.card-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* Preço antigo riscado */
+.price-old {
+  font-size: 12px;
+  text-decoration: line-through;
+  opacity: 0.6;
+  display: inline-block;
+  margin-right: 10px;
+  color: #bbb;
+}
+
+/* Badge de desconto */
+.discount-badge {
+  background: #00155a;
+  color: white;
+  padding: 2px 10px;
+  font-size: 11px;
+  border-radius: 20px;
+  vertical-align: middle;
+  opacity: 0.9;
+}
+
+/* Preço atual em destaque */
+.price-current {
+  font-weight: 900;
+  font-size: 20px;
+  margin: 6px 0;
+}
+
+/* Informação extra, ex: À vista no Pix */
+.price-info {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Rodapé do card com botões comprar e carrinho */
+.card-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botão comprar agora */
+.btn-buy {
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.btn-buy:hover {
+  background-color: #00e439;
+}
+
+/* Ícone foguete no botão comprar */
+.btn-buy svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+/* Botão carrinho */
+.btn-cart {
+  background-color: #001e80;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.btn-cart:hover {
+  background-color: #00ff0d;
+}
+
+/* Ícone carrinho */
+.btn-cart svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+/* Botão ver mais na direita, abaixo da grid */
+.btn-see-more {
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 10px 26px;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 30px;
+  float: right;
+  gap: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-see-more:hover {
+  background-color: white;
+  color: #040404;
+}
+
+/* Ícone seta do botão ver mais */
+.btn-see-more svg {
+  fill: currentColor;
+  width: 18px;
+  height: 18px;
+}
+
+/* Overlay de estoque esgotado */
+.card.sold-out::before {
+  content: 'ESTOQUE ESGOTADO';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,0.75);
+  color: white;
+  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 12px;
+  z-index: 10;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
