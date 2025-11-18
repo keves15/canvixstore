@@ -88,7 +88,7 @@ const products = [
     pixInfo: 'À vista no Pix',
     soldOut: false,
     link: "https://wa.me/5599991805595?text=Quero+comprar:+Tela+Netflix",
-    desc: 'Tela Netflix • Acesso imediato • 1 Tela • 30 Dias de uso'
+    desc: 'Netflix PREMIUM • Acesso imediato • 1 Tela • 30 Dias de uso'
   },
   {
     image: 'https://cdn.centralcart.com.br/stores/9071/packages/ecb96a83-d7ff-4544-9984-3669d7d5d5fa.png',
